@@ -1,0 +1,47 @@
+{
+  "name": "babel-plugin-fn-call-operator",
+  "version": "1.0.0",
+  "description": "Alternative to babel-plugin-fn-call-operator",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src/index.js -o lib/index.js",
+    "watch-build": "npm run build -- -w",
+    "test": "mocha --compilers js:babel-register",
+    "watch-test": "npm test -- -w",
+    "lint": "eslint **/*.js --quiet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freemember007/babel-plugin-fn-call-operator"
+  },
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "pipe",
+    "pipe operator",
+    "currying",
+    "curry"
+  ],
+  "author": "Alexey Volodkin <a@vldkn.net>",
+  "contributors": [{
+   "name": "Quentin Gerodel",
+   "email": "me@quentingerodel.eu"
+  }],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/freemember007/babel-plugin-fn-call-operator"
+  },
+  "homepage": "https://github.com/freemember007/babel-plugin-fn-call-operator",
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
+    "babel-eslint": "^5.0.0",
+    "babel-plugin-strict-equality": "^1.0.0",
+    "babel-plugin-implicit-return": "^1.0.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-register": "^6.5.2",
+    "chai": "^3.5.0",
+    "eslint": "^2.2.0",
+    "mocha": "^2.4.5"
+  }
+}
