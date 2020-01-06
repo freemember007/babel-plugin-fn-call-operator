@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-fn-call-operator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Alternative to babel-plugin-fn-call-operator",
   "main": "lib/index.js",
   "scripts": {

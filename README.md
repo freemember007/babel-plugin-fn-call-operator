@@ -1,38 +1,28 @@
-# babel-plugin-pipe-operator-curry
+# babel-plugin-fn-call-operator
 
-This work is an alternative to [babel-plugin-pipe-operator](https://github.com/miraks/babel-plugin-pipe-operator).
-I choosed to implement `pipe operator` with the currying way instead of putting flow as the first callable arguments.
+just like Haskell's '$' operator.
 
 ## Examples
 
 ```javascript
-import { mean, round } from 'lodash';
-
-const array = [1, 2, 3, 4, 5];
-
-array
-| mean
-| round
+store.dispatch << setTagForm({'name': val.target.value})
 ```
 
 Turn into
 
 ```javascript
-import { mean, round } from 'lodash';
+store.dispatch(setTagForm({'name': val.target.value}))
 
-const array = [1, 2, 3, 4, 5];
-
-round(mean(array))
 ```
 
 ## Disabling in current scope
 
-If you want to use the original pipe operator, you can disable this plugin in current scope (and it children scopes) using `"no pipe"` directive as described in the original one.
+If you want to use the original pipe operator, you can disable this plugin in current scope (and it children scopes) using `"no fn-call"` directive as described in the original one.
 
 ## Installation
 
 ```sh
-$ npm install --save-dev babel-plugin-pipe-operator-curry
+$ npm install --save-dev babel-plugin-fn-call-operator
 ```
 
 ## Usage
@@ -43,21 +33,21 @@ $ npm install --save-dev babel-plugin-pipe-operator-curry
 
 ```json
 {
-  "plugins": ["pipe-operator-curry"]
+  "plugins": ["fn-call-operator"]
 }
 ```
 
 ### Via CLI
 
 ```sh
-$ babel --plugins pipe-operator-curry script.js
+$ babel --plugins fn-call-operator script.js
 ```
 
 ### Via Node API
 
 ```javascript
 require("babel-core").transform("code", {
-  plugins: ["pipe-operator-curry"]
+  plugins: ["fn-call-operator"]
 });
 ```
 
